@@ -27,7 +27,7 @@ class App extends Component {
         <ul>
           {filteredTerms.map((post) =>
             <li><a href={post.url}><img src={post.image}  alt={post.title}/></a>
-              <p>{post.title}</p></li>)}
+              <p><a href={post.url}>{post.title}</a></p></li>)}
         </ul>
       </div>
     )
