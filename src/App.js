@@ -12,7 +12,6 @@ class App extends Component {
     }
   }
   updateSearch = (event) => {
-    event.preventDefault();
     this.setState({ searchFilter: event.target.value })
   }
   render() {
@@ -22,12 +21,13 @@ class App extends Component {
     return (
       <div>
         <div className="filter">
-          <input value={this.state.searchFilter} type="text" placeholder="Ingresa el término de búsqueda" onChange={this.updateSearch.bind(this)} />
+          <input value={this.state.searchFilter} type="text" placeholder="Ingresa el término de búsqueda" 
+          onChange={this.updateSearch.bind(this)} />
         </div>
         <ul>
           {filteredTerms.map((post) =>
-            <li><a href={post.url}><img src={post.image} /></a>
-              <p href={post.url}>{post.title}</p></li>)}
+            <li><a href={post.url}><img src={post.image}  alt={post.title}/></a>
+              <p>{post.title}</p></li>)}
         </ul>
       </div>
     )
